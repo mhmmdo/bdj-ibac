@@ -20,11 +20,13 @@
 ---
 
 ## 01:15 - 02:30 | Supply Chain & Meet the Artisans (Section C)
-*   **Visual Focus:** Craft Section & "Meet the Artisans" Profile Gallery
+*   **Visual Focus:** Craft Section, YouTube Video Player & "Meet the Artisans" Profile Gallery
 *   **Presenter Pitch (Social Impact & Humanizing the Brand):**
     > "Our operational model is built on fair-trade decentralization, pooling the skills of rural female weavers, or 'Puan,' into craft circles.
     > 
-    > To connect global buyers with our makers, we built an interactive **Artisan Profile Gallery** featuring the weavers behind the collections, like Ibu Salamah and Ibu Hamdanah.
+    > To show this story dynamically, we embedded a **YouTube Video Documentary** directly on the page, letting buyers watch the actual process of harvesting and weaving.
+    > 
+    > Right below the video, we built our interactive **Artisan Profile Gallery** featuring the weavers behind the collections, like Ibu Salamah and Ibu Hamdanah.
     > 
     > Visitors can hover over their profiles to read personal quotes about how weaving purun pays for their grandchildren's education and keeps local forests wet. By humanizing the supply chain, we build deep emotional trust, transforming ethical transparency into brand loyalty."
 
