@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Discover premium handwoven purun bags and accessories, crafted by women artisans in South Kalimantan. Weaving peatland conservation with global contemporary fashion." />
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Purun Puan — Contemporary Wetland Craftsmanship" />
+  <meta property="og:description"
+    content="Empowering South Kalimantan women weavers through eco-friendly peatland-grown purun crafts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/savara_bag.png" />
+
+  <title>Purun Puan — Contemporary Wetland Craftsmanship from South Kalimantan</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="nav-bar">
+    <a href="#home" class="nav-brand" aria-label="Purun Puan Home">
+      <!-- SVG Logo mimicking the rotational P-motif with leaves from the user's gold embossed image -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Central woven cross -->
+        <path d="M 50 15 L 50 85 M 15 50 L 85 50" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+        <!-- Four rotating loops representing the letter P -->
+        <path d="M 50 30 C 65 30, 65 15, 50 15 C 45 15, 45 30, 50 30" fill="none" stroke="currentColor"
+          stroke-width="4" />
+        <path d="M 70 50 C 70 65, 85 65, 85 50 C 85 45, 70 45, 70 50" fill="none" stroke="currentColor"
+          stroke-width="4" />
+        <path d="M 50 70 C 35 70, 35 85, 50 85 C 55 85, 55 70, 50 70" fill="none" stroke="currentColor"
+          stroke-width="4" />
+        <path d="M 30 50 C 30 35, 15 35, 15 50 C 15 55, 30 55, 30 50" fill="none" stroke="currentColor"
+          stroke-width="4" />
+        <!-- Four seed/leaf shapes in the diagonals -->
+        <path d="M 62 38 C 65 35, 68 38, 65 41 C 62 44, 59 41, 62 38 Z" fill="currentColor" />
+        <path d="M 62 62 C 65 65, 68 62, 65 59 C 62 56, 59 59, 62 62 Z" fill="currentColor" />
+        <path d="M 38 62 C 35 65, 32 62, 35 59 C 38 56, 41 59, 38 62 Z" fill="currentColor" />
+        <path d="M 38 38 C 35 35, 32 38, 35 41 C 38 44, 41 41, 38 38 Z" fill="currentColor" />
+      </svg>
+      <span>PURUN PUAN</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="#craft" data-t="nav.craft">The Craft</a>
+      <a href="#material" data-t="nav.material">Material</a>
+      <a href="#origin" data-t="nav.origin">Origin</a>
+      <a href="#collection" data-t="nav.collection">Collection</a>
+      <a href="#quiz" data-t="nav.quiz">Matchmaker</a>
+      <a href="#journey" data-t="nav.journey">Our Journey</a>
+      <a href="#inquiry" data-t="nav.inquiry">Inquiry</a>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Shopping Bag Button -->
+      <button class="cart-toggle" aria-label="Open Shopping Bag" id="cart-toggle-btn"
+        style="position: relative; display: flex; align-items: center; background: none; border: none; cursor: pointer; color: var(--color-linen); padding: 8px; transition: opacity var(--duration-fast); margin-right: 8px;">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+          style="height: 24px; width: 24px; fill: currentColor;">
+          <path
+            d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z" />
+        </svg>
+        <span class="cart-count" id="cart-count-badge"
+          style="position: absolute; top: -2px; right: -2px; background-color: var(--color-linen); color: var(--color-walnut); font-family: var(--font-houseplant); font-size: 11px; font-weight: 700; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-walnut);">0</span>
+      </button>
+      <!-- Language Switcher -->
+      <button class="lang-toggle" aria-label="Switch language">
+        <span class="lang-active">EN</span>
+        <span class="lang-divider">|</span>
+        <span class="lang-inactive">ID</span>
+      </button>
+      <!-- Burger menu for mobile -->
+      <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/images/hero_purun.png" alt="South Kalimantan wetlands with wild purun sedge grass at sunrise" />
+    </div>
+    <div class="hero-slanted-shape"></div>
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        <span class="eyebrow" data-t="hero.eyebrow">South Kalimantan, Indonesia</span>
+        <h1 data-t="hero.headline">Rooted in the Soil. Woven for the World.</h1>
+        <p class="lead" data-t="hero.supporting">
+          Purun Puan brings the heritage of peatland craftsmanship into contemporary everyday life. Handwoven slowly by
+          women artisans, keeping local identity visible on a wider journey.
+        </p>
+        <div class="hero-actions">
+          <a href="#collection" class="btn btn-primary" data-t="hero.ctaPrimary">Explore the Collection</a>
+          <a href="#craft" class="btn btn-ghost" data-t="hero.ctaSecondary">Discover the Craft</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="weave-grid">
+
+    <!-- SECTION C: THE CRAFT (Now First - Human & Social Story USP) -->
+    <section class="space-y" id="craft">
+      <div class="container split-section">
+        <div class="split-text reveal">
+          <span class="eyebrow" data-t="craft.eyebrow">Woven by Puan</span>
+          <h2 data-t="craft.headline">Hands that hold generational knowledge.</h2>
+          <p data-t="craft.text1">
+            In South Kalimantan, the word 'Puan' respects the women who form the backbone of rural communities. For
+            generations, they have gathered in home workshops to weave purun into household mats. Today, they apply
+            their skill to contemporary designs.
+          </p>
+          <p data-t="craft.text2">
+            We work directly with artisan circles, ensuring fair pay and a respectful working rhythm. Each item is made
+            slowly, preserving the natural texture and personality of the fibers.
+          </p>
+        </div>
+        <div class="split-media reveal">
+          <img src="assets/images/artisan_hands.png" alt="Close-up of artisan hands weaving purun fiber patterns" />
+        </div>
+      </div>
+      <!-- Meet the Artisans Profile Gallery -->
+      <div class="container" style="margin-top: 56px; border-top: 1px solid var(--color-border); padding-top: 56px;">
+        <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;">
+          <span class="eyebrow" data-t="artisans.eyebrow">Meet the Makers</span>
+          <h3 data-t="artisans.headline" style="font-size: 24px; text-transform: uppercase; margin-top: 8px;">The Weaving Circle</h3>
+        </div>
+        
+        <!-- Grid of 3 Artisans -->
+        <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
+          
+          <!-- Artisan 1 -->
+          <div class="artisan-card" style="background-color: var(--color-linen); border: 1px solid var(--color-border); border-radius: var(--radius-cards); padding: var(--card-padding); text-align: center; transition: all var(--duration-fast); cursor: pointer;" data-quote-key="salamah">
+            <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px auto; border: 2px solid var(--color-walnut);">
+              <img src="assets/images/artisan_hands.png" alt="Ibu Salamah" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 data-t="artisans.salamahTitle" style="font-size: 16px; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;">Ibu Salamah</h4>
+            <span data-t="artisans.salamahDesc" style="font-size: 13px; color: var(--color-graphite); font-weight: 500; display: block; margin-bottom: 12px;">Palam Weaving Circle Leader</span>
+            <p id="quote-salamah" style="font-size: 13px; font-style: italic; line-height: 1.5; color: var(--color-graphite); border-top: 1px solid var(--color-border); padding-top: 12px;" data-t="artisans.salamahQuote">"Weaving purun is no longer just for mats; it pays for my grandchildren's school and keeps our village peat forests wet."</p>
+          </div>
+
+          <!-- Artisan 2 -->
+          <div class="artisan-card" style="background-color: var(--color-linen); border: 1px solid var(--color-border); border-radius: var(--radius-cards); padding: var(--card-padding); text-align: center; transition: all var(--duration-fast); cursor: pointer;" data-quote-key="hamdanah">
+            <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px auto; border: 2px solid var(--color-walnut);">
+              <img src="assets/images/sasirangan_clutch.png" alt="Ibu Hamdanah" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 data-t="artisans.hamdanahTitle" style="font-size: 16px; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;">Ibu Hamdanah</h4>
+            <span data-t="artisans.hamdanahDesc" style="font-size: 13px; color: var(--color-graphite); font-weight: 500; display: block; margin-bottom: 12px;">Fabric Integration Specialist</span>
+            <p id="quote-hamdanah" style="font-size: 13px; font-style: italic; line-height: 1.5; color: var(--color-graphite); border-top: 1px solid var(--color-border); padding-top: 12px;" data-t="artisans.hamdanahQuote">"I specialize in lining purun bags with Sasirangan fabrics. It keeps both Kalimantan craft legacies alive together."</p>
+          </div>
+
+          <!-- Artisan 3 -->
+          <div class="artisan-card" style="background-color: var(--color-linen); border: 1px solid var(--color-border); border-radius: var(--radius-cards); padding: var(--card-padding); text-align: center; transition: all var(--duration-fast); cursor: pointer;" data-quote-key="halimah">
+            <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px auto; border: 2px solid var(--color-walnut);">
+              <img src="assets/images/kencana_purse.png" alt="Ibu Halimah" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 data-t="artisans.halimahTitle" style="font-size: 16px; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;">Ibu Halimah</h4>
+            <span data-t="artisans.halimahDesc" style="font-size: 13px; color: var(--color-graphite); font-weight: 500; display: block; margin-bottom: 12px;">Fine Diagonal Weave Expert</span>
+            <p id="quote-halimah" style="font-size: 13px; font-style: italic; line-height: 1.5; color: var(--color-graphite); border-top: 1px solid var(--color-border); padding-top: 12px;" data-t="artisans.halimahQuote">"Fine diagonal weaving is a slow art. Doing it tells the story of our ancestors to the global fashion markets."</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION B: MATERIAL (Now Second - Tactile UX & Selector) -->
+    <section class="space-y" id="material">
+      <div class="container split-section reverse">
+        <div class="split-media reveal">
+          <!-- Pounded flat and dried stalks background -->
+          <img src="assets/images/palam_tote.png" alt="Dried golden-straw purun reeds ready for manual weaving" />
+        </div>
+        <div class="split-text reveal">
+          <span class="eyebrow" data-t="material.eyebrow">The Wild Fiber</span>
+          <h2 data-t="material.headline">What is Purun grass?</h2>
+          <p data-t="material.text1">
+            Purun (Lepironia articulata) is a resilient wetland plant with hollow, cylinder-like stems. Unlike synthetic
+            fibers, it grows without pesticides or fertilizers, flourishing in acidic swamp conditions.
+          </p>
+          <p data-t="material.text2">
+            We gather it by hand, select the strongest reeds, and dry them under the tropical sun. The dried reeds are
+            then pounded flat using traditional ironwood mallets, preparing them to be woven into strong, tactile
+            products.
+          </p>
+        </div>
+      </div>
+      <!-- Interactive Weave texture Selector -->
+      <div class="container" style="margin-top: 56px; border-top: 1px solid var(--color-border); padding-top: 56px;">
+        <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 32px auto;">
+          <h3 data-t="weaveSelector.title" style="font-size: 20px; text-transform: uppercase; margin-bottom: 8px;">Interactive Weave Showcase</h3>
+          <p data-t="weaveSelector.desc" style="font-size: 14px; color: var(--color-graphite);">Click each weave style to inspect the raw textures and technical patterns.</p>
+        </div>
+        
+        <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; flex-wrap: wrap;">
+          <!-- Left side: Selectors -->
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <button class="quiz-option-btn active-selector" id="weave-btn-raw" style="border-left: 4px solid var(--color-walnut);" data-weave="raw">
+              <strong data-t="weaveSelector.rawTitle">Raw Natural Weave</strong>
+            </button>
+            <button class="quiz-option-btn" id="weave-btn-fine" style="border-left: 4px solid transparent;" data-weave="fine">
+              <strong data-t="weaveSelector.fineTitle">Fine Diagonal Weave</strong>
+            </button>
+            <button class="quiz-option-btn" id="weave-btn-sasirangan" style="border-left: 4px solid transparent;" data-weave="sasirangan">
+              <strong data-t="weaveSelector.sasiranganTitle">Sasirangan Interlining</strong>
+            </button>
+          </div>
+          <!-- Right side: Zoom view & Text -->
+          <div style="background-color: var(--color-linen); border: 1px solid var(--color-border); border-radius: var(--radius-cards); padding: var(--card-padding); display: flex; gap: 20px; align-items: center; min-height: 180px; flex-wrap: wrap;">
+            <img id="weave-texture-img" src="assets/images/palam_tote.png" alt="Weave texture" style="width: 100px; height: 100px; object-fit: cover; border-radius: var(--radius-tags); border: 1px solid var(--color-border); transition: transform var(--duration-fast);">
+            <div style="flex: 1; min-width: 200px;">
+              <h4 id="weave-texture-title" style="font-size: 16px; text-transform: uppercase; margin-bottom: 8px; color: var(--color-walnut);" data-t="weaveSelector.rawTitle">Raw Natural Weave</h4>
+              <p id="weave-texture-desc" style="font-size: 14px; line-height: 1.5; color: var(--color-graphite);" data-t="weaveSelector.rawDesc">A standard flat check weave using raw, uncolored purun stalks. Maximizes fiber strength and features raw earth-cream tones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION A: ORIGIN (Now Third - Wetland & Conservation context) -->
+    <section class="space-y" id="origin">
+      <div class="container split-section">
+        <div class="split-text reveal">
+          <span class="eyebrow" data-t="origin.eyebrow">The Peatland Origin</span>
+          <h2 data-t="origin.headline">Born in the wetlands of South Kalimantan.</h2>
+          <p data-t="origin.text1">
+            Our story begins in the vast peatlands of Borneo, where the purun sedge grass grows naturally in swampy
+            soil. These wetlands act as critical carbon sinks, helping regulate our global climate.
+          </p>
+          <p data-t="origin.text2">
+            By harvesting wild purun rather than clearing peatlands for industrial agriculture, our artisans help keep
+            these ecosystems intact. Conservation is not a separate initiative; it is woven into the raw materials we
+            harvest.
+          </p>
+        </div>
+        <div class="split-media reveal">
+          <img src="assets/images/hero_purun.png"
+            alt="Earthy swamps of Banjarbaru, South Kalimantan, conservation site" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION D: COLLECTION SHOWCASE -->
+    <section class="space-y" id="collection">
+      <div class="container">
+        <div class="collection-header reveal">
+          <span class="eyebrow" data-t="collection.eyebrow">The Collection</span>
+          <h2 data-t="collection.headline">Contemporary craft for everyday travel.</h2>
+        </div>
+
+        <!-- Category Selector -->
+        <div class="collection-categories reveal">
+          <button class="category-btn active" data-category="all" data-t="collection.all">All Pieces</button>
+          <button class="category-btn" data-category="totes" data-t="collection.totes">Totes</button>
+          <button class="category-btn" data-category="clutches" data-t="collection.clutches">Clutches</button>
+          <button class="category-btn" data-category="accessories" data-t="collection.accessories">Accessories</button>
+        </div>
+
+        <!-- Product Grid Rendered via JS -->
+        <div class="product-grid">
+          <!-- Dynamic product cards populated from products.js -->
+        </div>
+        <!-- Catalog Banner (DESIGN.md walnut surface) -->
+        <div class="reveal"
+          style="margin-top: 56px; background-color: var(--color-walnut); color: var(--color-linen); padding: 40px; border-radius: var(--radius-cards); text-align: center; border: 1px solid var(--color-border);">
+          <h3 data-t="collection.catalogTitle"
+            style="font-size: 20px; text-transform: uppercase; margin-bottom: 12px; color: var(--color-linen);">Explore
+            Our Full Catalog</h3>
+          <p data-t="collection.catalogDesc"
+            style="color: rgba(244, 241, 224, 0.7); font-size: 15px; max-width: 600px; margin: 0 auto 24px auto;">
+            Access our official digital catalog on Google Drive to view our extensive collection of shapes, woven check
+            patterns, and custom sizing options.
+          </p>
+          <a href="https://drive.google.com/drive/folders/1HM-X-su7w9hVPSJ5BOctSh2G1cbZSOn6" target="_blank"
+            rel="noopener" class="btn btn-ghost" data-t="collection.catalogAction">
+            Open Google Drive Catalog
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MATCHMAKER QUIZ -->
+    <section class="space-y" id="quiz" style="background-color: var(--color-soft-sand); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 720px; text-align: center;">
+        <div class="reveal">
+          <span class="eyebrow" data-t="quiz.eyebrow">Interactive Recommender</span>
+          <h2 data-t="quiz.headline" style="margin-bottom: 16px;">Find Your Perfect Weave Match</h2>
+          <p data-t="quiz.intro" style="font-size: 16px; color: var(--color-graphite); line-height: 1.6; margin-bottom: 32px;">
+            Unsure which purun piece fits your daily rhythm? Answer 3 quick lifestyle questions, and our design psychology matchmaker will recommend your ideal Kalimantan companion.
+          </p>
+        </div>
+
+        <!-- Quiz Container Box -->
+        <div class="reveal" id="quiz-card-container" style="background-color: var(--color-linen); border: 1px solid var(--color-border); border-radius: var(--radius-cards); padding: 40px; box-shadow: var(--shadow-sm); min-height: 280px; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: all var(--duration-normal) var(--ease-emphasized);">
+          
+          <!-- Start Quiz Screen -->
+          <div id="quiz-start-screen" style="width: 100%;">
+            <div style="font-size: 48px; margin-bottom: 24px; color: var(--color-walnut);">🌾</div>
+            <button id="quiz-start-btn" class="btn btn-primary" data-t="quiz.startBtn">Start Matchmaker Quiz</button>
+          </div>
+
+          <!-- Question Screen -->
+          <div id="quiz-question-screen" style="display: none; width: 100%; text-align: left;">
+            <h3 id="quiz-question-title" style="font-size: 20px; text-transform: uppercase; margin-bottom: 24px; color: var(--color-walnut); border-bottom: 1px solid var(--color-border); padding-bottom: 12px;">Question Title</h3>
+            <div id="quiz-options-list" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Option buttons go here -->
+            </div>
+          </div>
+
+          <!-- Result Screen -->
+          <div id="quiz-result-screen" style="display: none; width: 100%;">
+            <span class="eyebrow" data-t="quiz.resultTitle" style="color: var(--color-graphite);">Your Weaving Match is...</span>
+            <h3 id="quiz-result-name" style="font-size: 28px; text-transform: uppercase; color: var(--color-walnut); margin: 8px 0 16px 0;">Product Name</h3>
+            
+            <!-- Recommended Product Card Detail -->
+            <div id="quiz-result-card" style="display: flex; gap: 24px; background: rgba(255,255,255,0.5); padding: 20px; border-radius: var(--radius-tags); border: 1px solid var(--color-border); margin-bottom: 28px; text-align: left; align-items: center; flex-wrap: wrap;">
+              <img id="quiz-result-img" src="" alt="" style="width: 120px; height: 120px; object-fit: cover; border-radius: var(--radius-tags); border: 1px solid var(--color-border);">
+              <div style="flex: 1; min-width: 200px;">
+                <span id="quiz-result-price" style="font-weight: 600; color: var(--color-graphite); display: block; margin-bottom: 6px;">Price</span>
+                <p id="quiz-result-desc" style="font-size: 14px; line-height: 1.5; color: var(--color-graphite);">Description</p>
+              </div>
+            </div>
+
+            <!-- Quiz Action Buttons -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button id="quiz-add-to-cart-btn" class="btn btn-primary" style="width: 100%;" data-t="quiz.addToBag">Add Recommended to Bag</button>
+              <button id="quiz-view-passport-btn" class="btn btn-secondary" style="width: 100%;" data-t="quiz.viewPassport">View Match Craft Passport</button>
+              <button id="quiz-restart-btn" class="btn btn-ghost" style="width: 100%; margin-top: 8px;" data-t="quiz.restartBtn">Retake Quiz</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION E: LOCAL TO GLOBAL JOURNEY -->
+    <section class="space-y journey-section" id="journey">
+      <div class="container">
+        <h2 data-t="journey.headline">A visible value chain.</h2>
+
+        <div class="journey-timeline">
+          <!-- Center line that draws on scroll -->
+          <div class="journey-progress-line"></div>
+
+          <!-- Step 1 -->
+          <div class="journey-step">
+            <div class="journey-step-node"></div>
+            <div class="journey-step-content reveal">
+              <span class="journey-step-num">01 / Origin</span>
+              <h3 class="journey-step-title" data-t="journey.step1Title">Peatland Conservation</h3>
+              <p class="journey-step-desc" data-t="journey.step1Desc">
+                Wild purun grows naturally, preserving the wetland ecosystem without land clearance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="journey-step">
+            <div class="journey-step-node"></div>
+            <div class="journey-step-content reveal">
+              <span class="journey-step-num">02 / Prep</span>
+              <h3 class="journey-step-title" data-t="journey.step2Title">Traditional Prep</h3>
+              <p class="journey-step-desc" data-t="journey.step2Desc">
+                Artisans harvest, sun-dry, and hammer the stalks with ulin wood mallets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="journey-step">
+            <div class="journey-step-node"></div>
+            <div class="journey-step-content reveal">
+              <span class="journey-step-num">03 / Craft</span>
+              <h3 class="journey-step-title" data-t="journey.step3Title">Generational Weaving</h3>
+              <p class="journey-step-desc" data-t="journey.step3Desc">
+                Women weavers in South Kalimantan construct contemporary shapes and check patterns.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="journey-step">
+            <div class="journey-step-node"></div>
+            <div class="journey-step-content reveal">
+              <span class="journey-step-num">04 / Trust</span>
+              <h3 class="journey-step-title" data-t="journey.step4Title">Digital Transparency</h3>
+              <p class="journey-step-desc" data-t="journey.step4Desc">
+                The Craft Passport provides verifiable proof of origin and artisan contribution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="journey-step">
+            <div class="journey-step-node"></div>
+            <div class="journey-step-content reveal">
+              <span class="journey-step-num">05 / Market</span>
+              <h3 class="journey-step-title" data-t="journey.step5Title">Global Connection</h3>
+              <p class="journey-step-desc" data-t="journey.step5Desc">
+                Crafted goods travel to global buyers, carrying Kalimantan's identity to the world.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION F: PRESS & ACCOLADES -->
+    <section class="space-y" id="press" style="background-color: var(--color-soft-sand); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding-top: 80px; padding-bottom: 80px; margin: 0;">
+      <div class="container">
+        <div class="split-section">
+          <div class="split-text reveal">
+            <span class="eyebrow" data-t="press.eyebrow">Recognition & Social Proof</span>
+            <h2 data-t="press.headline">National recognition for a grassroots movement.</h2>
+            <p data-t="press.text1">
+              What started as a response to rural economic challenges in 2019 has grown into an internationally recognized brand. Empowering women across South Kalimantan villages, Purun Puan bridges traditional wisdom with international fashion.
+            </p>
+            
+            <div style="margin: 28px 0; border-left: 3px solid var(--color-walnut); padding-left: 20px; font-style: italic;">
+              <p style="font-family: var(--font-houseplant); font-size: 18px; line-height: 1.5; color: var(--color-walnut);" data-t="press.quote">
+                "Wild purun, an endemic wetland plant, becomes highly valuable in the hands of South Kalimantan's women artisans. Under the Purun Puan brand, they are now forging a path to the international market."
+              </p>
+              <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-graphite); font-weight: 600;">— ANTARA News</span>
+            </div>
+            
+            <div style="margin-top: 32px;">
+              <a href="https://www.antaranews.com/berita/3015605/purun-puan-kalsel-merintis-ke-pasar-internasional" target="_blank" rel="noopener" class="btn btn-secondary" data-t="press.cta">
+                Read Full Feature on ANTARA News
+              </a>
+            </div>
+          </div>
+          
+          <div class="split-media reveal" style="display: flex; flex-direction: column; justify-content: center; gap: 24px; background-color: var(--color-linen); padding: 40px; border-radius: var(--radius-cards); border: 1px solid var(--color-border);">
+            <h3 style="font-family: var(--font-houseplant); text-transform: uppercase; font-size: 18px; color: var(--color-walnut); border-bottom: 1px solid var(--color-border); padding-bottom: 12px; margin-bottom: 8px;" data-t="press.accoladesTitle">Key Achievements</h3>
+            
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
+              <li style="display: flex; gap: 16px; align-items: flex-start;">
+                <span style="font-size: 24px; line-height: 1;">🇮🇩</span>
+                <div>
+                  <h4 style="font-family: var(--font-roboto); font-size: 15px; font-weight: 700; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;" data-t="press.acc1Title">AKI Finalist (Kemenparekraf)</h4>
+                  <p style="font-size: 14px; color: var(--color-graphite); margin: 0;" data-t="press.acc1Desc">Recognized by the Ministry of Tourism & Creative Economy for exceptional local design innovation.</p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 16px; align-items: flex-start;">
+                <span style="font-size: 24px; line-height: 1;">🇯🇵</span>
+                <div>
+                  <h4 style="font-family: var(--font-roboto); font-size: 15px; font-weight: 700; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;" data-t="press.acc2Title">Tokyo Showcase (Bank Indonesia)</h4>
+                  <p style="font-size: 14px; color: var(--color-graphite); margin: 0;" data-t="press.acc2Desc">Selected for PAMOR BORNEO to present premium sustainable collections to Japanese buyers.</p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 16px; align-items: flex-start;">
+                <span style="font-size: 24px; line-height: 1;">✨</span>
+                <div>
+                  <h4 style="font-family: var(--font-roboto); font-size: 15px; font-weight: 700; text-transform: uppercase; color: var(--color-walnut); margin-bottom: 4px;" data-t="press.acc3Title">Gernas BBI Top 67 UMKM</h4>
+                  <p style="font-size: 14px; color: var(--color-graphite); margin: 0;" data-t="press.acc3Desc">Ranked among the top 67 creative brands out of 1,178 contestants in South Kalimantan.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION G: BUSINESS INQUIRY -->
+    <section class="space-y" id="inquiry">
+      <div class="container inquiry-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-t="inquiry.eyebrow">Business Partnership</span>
+          <h2 data-t="inquiry.headline">Bring contemporary craft to your space.</h2>
+          <p data-t="inquiry.text">
+            We collaborate with retailers, boutique hotels, and corporate partners who value cultural authenticity and
+            environmental transparency. Send a business inquiry to discuss custom designs or wholesale orders.
+          </p>
+          <div style="margin-top: 24px;">
+            <a href="https://api.whatsapp.com/send/?phone=6282159619636&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="height: 18px; width: 18px; fill: currentColor;">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.62.963 3.41 1.47 5.238 1.472 5.549 0 10.065-4.512 10.068-10.066.002-2.69-1.042-5.221-2.94-7.122C17.11 1.536 14.584.49 11.895.49c-5.558 0-10.078 4.516-10.082 10.072 0 1.83.479 3.619 1.39 5.221l-.992 3.623 3.71-.973c1.547.844 3.287 1.289 5.036 1.29zm8.563-7.06c-.347-.174-2.054-1.014-2.372-1.13-.318-.116-.549-.174-.78.174-.23.348-.895 1.13-1.096 1.362-.201.232-.403.261-.75.087-.348-.174-1.47-.542-2.798-1.728-1.034-.922-1.733-2.062-1.936-2.41-.202-.348-.022-.536.153-.71.156-.156.348-.406.522-.609.174-.203.232-.348.348-.58.116-.232.058-.435-.029-.609-.087-.174-.78-1.884-1.069-2.58-.282-.676-.567-.585-.78-.596-.201-.01-.432-.012-.663-.012-.23 0-.606.087-.923.435-.318.348-1.214 1.189-1.214 2.901 0 1.711 1.244 3.364 1.417 3.596.173.232 2.449 3.738 5.932 5.24.828.357 1.474.57 1.977.73.832.264 1.59.227 2.189.138.667-.099 2.054-.839 2.343-1.651.289-.812.289-1.507.202-1.651-.087-.144-.318-.232-.665-.406z"/>
+              </svg>
+              <span data-t="inquiry.whatsapp">Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="inquiry-form-container reveal">
+          <form id="inquiry-form" novalidate>
+            <div class="form-group">
+              <label for="inquiry-name" data-t="inquiry.form.name">Full Name</label>
+              <input type="text" id="inquiry-name" class="form-control" placeholder="Jane Doe"
+                data-t-placeholder="inquiry.form.name" required />
+            </div>
+            <div class="form-group">
+              <label for="inquiry-email" data-t="inquiry.form.email">Business Email</label>
+              <input type="email" id="inquiry-email" class="form-control" placeholder="jane@company.com"
+                data-t-placeholder="inquiry.form.email" required />
+            </div>
+            <div class="form-group">
+              <label for="inquiry-company" data-t="inquiry.form.company">Company Name</label>
+              <input type="text" id="inquiry-company" class="form-control" placeholder="Your Boutique / Agency"
+                data-t-placeholder="inquiry.form.company" />
+            </div>
+            <div class="form-group">
+              <label for="inquiry-type" data-t="inquiry.form.type">Inquiry Type</label>
+              <select id="inquiry-type" class="form-control" required>
+                <option value="" disabled selected data-t="inquiry.form.selectDefault">Select type...</option>
+                <option value="wholesale" data-t="inquiry.form.wholesale">Wholesale & Retail Partnership</option>
+                <option value="custom" data-t="inquiry.form.custom">Custom / Collaborations</option>
+                <option value="gifting" data-t="inquiry.form.gifting">Corporate Gifting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inquiry-message" data-t="inquiry.form.message">Your Message</label>
+              <textarea id="inquiry-message" class="form-control" placeholder="..."
+                data-t-placeholder="inquiry.form.message" required></textarea>
+            </div>
+
+            <!-- Localized Message Box -->
+            <div id="inquiry-form-message" class="form-message" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;"
+              data-t="inquiry.form.submit">
+              Send Business Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION G: SHOWROOM MAP -->
+    <section class="space-y" id="showroom-location">
+      <div class="container split-section">
+        <div class="split-text reveal">
+          <span class="eyebrow" data-t="map.eyebrow">Visit Our Showroom</span>
+          <h2 data-t="map.headline">Explore the craft in person.</h2>
+          <p data-t="map.description">
+            Come visit our creative workshop and showroom in South Kalimantan. Here, you can feel the textures of raw
+            and processed purun, see our weaving circles at work, and explore custom collaboration ideas.
+          </p>
+          <div style="margin-top: 32px;">
+            <a href="https://maps.google.com/?q=Suria+Futsal+and+Basketball+Banjarmasin" target="_blank" rel="noopener"
+              class="btn btn-secondary" data-t="map.directions">
+              Get Directions on Google Maps
+            </a>
+          </div>
+        </div>
+        <div class="split-media reveal map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.8702072528154!2d114.5940055!3d-3.3158000999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423c1bd7c70fd%3A0x3e5ddef605227b2f!2sSuria%20Futsal%20and%20Basketball!5e1!3m2!1sid!2sid!4v1786327856820!5m2!1sid!2sid"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" aria-label="Google Map Showroom Location"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <h4 data-t="footer.branding">PURUN PUAN</h4>
+        <p data-t="footer.tagline">Woven in South Kalimantan. Made for the world.</p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#origin" data-t="nav.origin">Origin</a></li>
+          <li><a href="#material" data-t="nav.material">Material</a></li>
+          <li><a href="#craft" data-t="nav.craft">The Craft</a></li>
+          <li><a href="#collection" data-t="nav.collection">Collection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Connect</h5>
+        <div class="footer-social-row">
+          <!-- Instagram Link -->
+          <a href="https://instagram.com/purun.puan" class="footer-social-link" aria-label="Instagram Profile"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+          </a>
+          <!-- WhatsApp Link -->
+          <a href="https://api.whatsapp.com/send/?phone=6282159619636&text&type=phone_number&app_absent=0" class="footer-social-link" aria-label="WhatsApp Contact" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.62.963 3.41 1.47 5.238 1.472 5.549 0 10.065-4.512 10.068-10.066.002-2.69-1.042-5.221-2.94-7.122C17.11 1.536 14.584.49 11.895.49c-5.558 0-10.078 4.516-10.082 10.072 0 1.83.479 3.619 1.39 5.221l-.992 3.623 3.71-.973c1.547.844 3.287 1.289 5.036 1.29zm8.563-7.06c-.347-.174-2.054-1.014-2.372-1.13-.318-.116-.549-.174-.78.174-.23.348-.895 1.13-1.096 1.362-.201.232-.403.261-.75.087-.348-.174-1.47-.542-2.798-1.728-1.034-.922-1.733-2.062-1.936-2.41-.202-.348-.022-.536.153-.71.156-.156.348-.406.522-.609.174-.203.232-.348.348-.58.116-.232.058-.435-.029-.609-.087-.174-.78-1.884-1.069-2.58-.282-.676-.567-.585-.78-.596-.201-.01-.432-.012-.663-.012-.23 0-.606.087-.923.435-.318.348-1.214 1.189-1.214 2.901 0 1.711 1.244 3.364 1.417 3.596.173.232 2.449 3.738 5.932 5.24.828.357 1.474.57 1.977.73.832.264 1.59.227 2.189.138.667-.099 2.054-.839 2.343-1.651.289-.812.289-1.507.202-1.651-.087-.144-.318-.232-.665-.406z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span data-t="footer.rights">© 2026 Purun Puan. All rights reserved.</span>
+      <span data-t="footer.strategyNote">IBAC 2026 — Business Website Design. Created for Local to Global UMKM
+        Digitalization.</span>
+    </div>
+
+    <!-- Giant Wordmark at closing boundary -->
+    <div class="footer-wordmark-container">
+      <span class="footer-wordmark" data-t="footer.branding">PURUN PUAN</span>
+    </div>
+  </footer>
+
+  <!-- DRAWER OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- SIGNATURE FEATURE: CRAFT PASSPORT DRAWER -->
+  <aside class="passport-drawer" id="passport-drawer" role="dialog" aria-modal="true"
+    aria-labelledby="passport-prod-name">
+    <div class="passport-header">
+      <h3 data-t="passport.title">Craft Passport</h3>
+      <button class="passport-close-btn" aria-label="Close Passport">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="passport-content">
+      <!-- Product Quick Summary -->
+      <div class="passport-product-meta">
+        <img src="" id="passport-prod-image" alt="" />
+        <div class="passport-product-meta-text">
+          <h4 id="passport-prod-name">Product Name</h4>
+          <span class="price" id="passport-prod-price">IDR 0</span>
+        </div>
+      </div>
+
+      <!-- Provenance Detail Cards -->
+      <div id="passport-details-grid">
+        <!-- Populated dynamically based on products.js and active language -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- SHOPPING BAG DRAWER -->
+  <aside class="passport-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <div class="passport-header">
+      <h3 id="cart-title" data-t="cart.title">Shopping Bag</h3>
+      <button class="passport-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="passport-content"
+      style="display: flex; flex-direction: column; height: calc(100% - 70px); padding: 24px;">
+      <!-- Scrollable list of items -->
+      <div id="cart-items-list" style="flex-grow: 1; overflow-y: auto; margin-bottom: 24px;">
+        <!-- Filled dynamically -->
+      </div>
+
+      <!-- Checkout footer -->
+      <div id="cart-footer" style="border-top: 1px solid var(--color-border); padding-top: 20px;">
+        <!-- Ecological Impact Badge -->
+        <div id="cart-impact-badge" style="background-color: rgba(50, 30, 30, 0.05); border: 1px solid var(--color-border); border-radius: var(--radius-tags); padding: 12px; font-size: 13px; color: var(--color-walnut); margin-bottom: 16px; line-height: 1.4; display: none;">
+          <!-- Filled dynamically -->
+        </div>
+        <div
+          style="display: flex; justify-content: space-between; font-family: var(--font-houseplant); font-size: 18px; font-weight: 600; margin-bottom: 16px;">
+          <span data-t="cart.subtotal">Subtotal</span>
+          <span id="cart-subtotal-price">IDR 0</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-primary" style="width: 100%;" data-t="cart.checkout">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FLOATING WHATSAPP CRO WIDGET -->
+  <a href="https://api.whatsapp.com/send/?phone=6282159619636&text=Halo%20Purun%20Puan,%20saya%20ingin%20tanya%20detail%20mengenai%20produk%20anyaman%20Anda.&type=phone_number&app_absent=0" 
+     class="whatsapp-float-widget" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chat with Purun Puan on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.62.963 3.41 1.47 5.238 1.472 5.549 0 10.065-4.512 10.068-10.066.002-2.69-1.042-5.221-2.94-7.122C17.11 1.536 14.584.49 11.895.49c-5.558 0-10.078 4.516-10.082 10.072 0 1.83.479 3.619 1.39 5.221l-.992 3.623 3.71-.973c1.547.844 3.287 1.289 5.036 1.29zm8.563-7.06c-.347-.174-2.054-1.014-2.372-1.13-.318-.116-.549-.174-.78.174-.23.348-.895 1.13-1.096 1.362-.201.232-.403.261-.75.087-.348-.174-1.47-.542-2.798-1.728-1.034-.922-1.733-2.062-1.936-2.41-.202-.348-.022-.536.153-.71.156-.156.348-.406.522-.609.174-.203.232-.348.348-.58.116-.232.058-.435-.029-.609-.087-.174-.78-1.884-1.069-2.58-.282-.676-.567-.585-.78-.596-.201-.01-.432-.012-.663-.012-.23 0-.606.087-.923.435-.318.348-1.214 1.189-1.214 2.901 0 1.711 1.244 3.364 1.417 3.596.173.232 2.449 3.738 5.932 5.24.828.357 1.474.57 1.977.73.832.264 1.59.227 2.189.138.667-.099 2.054-.839 2.343-1.651.289-.812.289-1.507.202-1.651-.087-.144-.318-.232-.665-.406z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <!-- CONTENT DATA & SCRIPTS -->
+  <script src="data/content.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

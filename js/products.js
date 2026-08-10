@@ -1,0 +1,140 @@
+const products = [
+  {
+    id: "savara-bag",
+    category: "totes",
+    name: "Savara Woven Tote",
+    image: "assets/images/savara_bag.png",
+    price: "IDR 580,000 / $39.00",
+    description_en: "A spacious, structured tote featuring a striking multicolored checker weave. Hand-finished with premium oil-pull leather handles and sturdy brass hardware.",
+    description_id: "Tas jinjing berstruktur luas dengan motif anyaman kotak warna-warni yang mencolok. Disempurnakan dengan pegangan kulit sapi premium dan perangkat kuningan yang kokoh.",
+    details: {
+      material_en: "100% wild-harvested Purun grass (Lepironia articulata) dyed with non-toxic pigments, combined with genuine Indonesian cowhide leather handles.",
+      material_id: "100% serat tanaman purun liar (Lepironia articulata) yang diwarnai dengan pigmen ramah lingkungan, dipadukan dengan pegangan dari kulit sapi asli.",
+      origin_en: "Peatlands of Palam, Banjarbaru, South Kalimantan, Indonesia.",
+      origin_id: "Lahan basah Palam, Banjarbaru, Kalimantan Selatan, Indonesia.",
+      maker_en: "Woven by Ibu Salamah and the Palam Women Artisan Circle, providing fair, supplementary income for swamp-dwelling farming households.",
+      maker_id: "Dianyam oleh Ibu Salamah dan Kelompok Perajin Perempuan Palam, memberikan pendapatan tambahan yang adil bagi keluarga petani rawa.",
+      process_en: "Harvested from peat swamps -> Dried in sun for 3 days -> Pounded flat with ironwood mallets -> Natural dyeing -> Hand-woven into a check pattern -> Stitched and fitted with leather handles.",
+      process_id: "Dipanen dari rawa gambut -> Dijemur di bawah matahari selama 3 hari -> Ditumbuk rata dengan alu kayu ulin -> Pewarnaan alami -> Dianyam manual motif kotak -> Dijahit dan dipasang pegangan kulit.",
+      care_en: "Keep in dry environments. If it gets damp, wipe with a dry cloth immediately and air dry under indirect sunlight. Avoid prolonged moisture exposure.",
+      care_id: "Simpan di tempat kering. Jika terkena air, segera lap dengan kain kering dan anginkan di bawah sinar matahari tidak langsung. Hindari kelembapan tinggi.",
+      impact_en: "Prevents peat forest fires by encouraging the community to keep the wetlands intact rather than clearing them. Directly supports rural female financial independence.",
+      impact_id: "Mencegah pembakaran lahan gambut dengan mendorong warga menjaga rawa tetap basah. Mendukung kemandirian finansial perajin perempuan di pedesaan."
+    }
+  },
+  {
+    id: "sasirangan-clutch",
+    category: "clutches",
+    name: "Sasirangan Weave Clutch",
+    image: "assets/images/sasirangan_clutch.png",
+    price: "IDR 350,000 / $24.00",
+    description_en: "An elegant foldover clutch weaving together natural purun fibers and a lining of traditional hand-dyed Sasirangan fabric from Banjarmasin.",
+    description_id: "Tas genggam lipat elegan yang memadukan serat purun alami dengan lapisan dalam kain Sasirangan pewarna celup tradisional khas Banjarmasin.",
+    details: {
+      material_en: "Natural-toned dried purun grass combined with internally-lined traditional Sasirangan cotton fabric, secured with a magnetic clasp.",
+      material_id: "Purun kering warna alami dipadukan dengan lapisan dalam kain katun Sasirangan tradisional, dilengkapi kancing magnet tersembunyi.",
+      origin_en: "Kampung Purun (Palam) and Sasirangan textile workshops in Banjarmasin, South Kalimantan.",
+      origin_id: "Kampung Purun (Palam) dan sentra tekstil Sasirangan di Kota Banjarmasin, Kalimantan Selatan.",
+      maker_en: "Woven by Ibu Hamdanah, with Sasirangan fabrics sourced from local textile artisans keeping Banjar resistance heritage alive.",
+      maker_id: "Dianyam oleh Ibu Hamdanah, dengan kain Sasirangan yang diperoleh langsung dari perajin tekstil lokal untuk melestarikan warisan budaya Banjar.",
+      process_en: "Selective harvesting -> Stem pounding -> Fine handweaving -> Inner fabric lining alignment -> Hand-stitching borders and hardware installation.",
+      process_id: "Pemanenan selektif -> Penumbukan batang -> Penganyaman halus -> Penyelarasan kain pelapis dalam -> Penjahitan tepi secara manual dan pemasangan kancing.",
+      care_en: "Gently wipe with a soft brush or microfiber cloth. Clean spillages in the fabric lining by spotting with mild soapy water and drying immediately.",
+      care_id: "Lap lembut dengan sikat halus atau kain mikrofiber. Bersihkan noda pada kain pelapis dalam dengan air sabun ringan dan segera keringkan.",
+      impact_en: "Sustains two endangered Kalimantan crafts simultaneously: purun weaving and hand-stitched Sasirangan dyeing. 100% biodegradable main body.",
+      impact_id: "Melestarikan dua kriya Kalimantan yang terancam punah secara bersamaan: anyaman purun dan kain Sasirangan. Badan utama tas 100% dapat terurai alami."
+    }
+  },
+  {
+    id: "palam-tote",
+    category: "totes",
+    name: "Palam Classic Tote",
+    image: "assets/images/palam_tote.png",
+    price: "IDR 420,000 / $28.00",
+    description_en: "A minimalist everyday tote showcasing the raw, warm-cream texture of undyed purun. Features structured vertical seams and a spacious canvas interior.",
+    description_id: "Tas jinjing harian berdesain minimalis yang menonjolkan tekstur alami krem hangat dari purun tanpa pewarna. Menampilkan jahitan vertikal yang kokoh dan bagian dalam yang luas.",
+    details: {
+      material_en: "Raw, uncolored dried purun grass, untreated to showcase natural fiber variance, lined with natural unbleached cotton canvas.",
+      material_id: "Serat purun kering alami tanpa zat pewarna untuk menonjolkan keaslian serat, dilapisi bagian dalam dengan kanvas katun mentah.",
+      origin_en: "Wetlands of Banjarbaru, South Kalimantan, Indonesia.",
+      origin_id: "Lahan basah Banjarbaru, Kalimantan Selatan, Indonesia.",
+      maker_en: "Crafted by the Puan Weaving Cooperative, assisting female agricultural workers with stable year-round craft income.",
+      maker_id: "Dibuat oleh Koperasi Penganyam Puan, membantu para buruh tani perempuan memperoleh pendapatan kerajinan yang stabil sepanjang tahun.",
+      process_en: "Stalk drying -> High-pressure flattening -> Tight single-loop weaving -> Fabric lining attachment -> Sewing reinforcing bottom base.",
+      process_id: "Pengeringan batang -> Perataan bertekanan tinggi -> Penganyaman rapat satu putaran -> Pemasangan lapisan kain dalam -> Penjahitan alas penguat.",
+      care_en: "Keep dry. Wipe down dust with a damp cloth if necessary, but ensure it is completely sun-dried afterwards. Store with silica gel packets.",
+      care_id: "Jaga agar tetap kering. Lap debu dengan kain setengah basah jika perlu, tetapi pastikan setelah itu dijemur sampai benar-benar kering. Simpan dengan silica gel.",
+      impact_en: "Promotes carbon-capturing peatland wetlands conservation by generating higher financial returns than peat-draining monoculture farming.",
+      impact_id: "Mendorong konservasi lahan gambut penyerap karbon dengan menghasilkan keuntungan finansial lebih tinggi dibanding pertanian monokultur yang mengeringkan rawa."
+    }
+  },
+  {
+    id: "kencana-purse",
+    category: "accessories",
+    name: "Kencana Shell Purse",
+    image: "assets/images/kencana_purse.png",
+    price: "IDR 280,000 / $19.00",
+    description_en: "A compact, shell-shaped shoulder bag woven with ultra-fine purun strands. Accentuated by a slim leather strap and hand-brushed brass closure.",
+    description_id: "Tas bahu mungil berbentuk cangkang yang dianyam rapat dengan serat purun ultra-halus. Dipercantik tali kulit ramping dan pengunci kuningan antik.",
+    details: {
+      material_en: "Selected thin purun grass fibers, premium vegetable-tanned leather shoulder strap, and solid brushed brass fittings.",
+      material_id: "Serat purun pilihan berdiameter tipis, tali bahu kulit samak nabati premium, dan aksesori logam kuningan padat.",
+      origin_en: "Palam Village, South Kalimantan, Indonesia.",
+      origin_id: "Desa Palam, Kalimantan Selatan, Indonesia.",
+      maker_en: "Handmade by Ibu Halimah, a master artisan specializing in high-density fine weaving techniques.",
+      maker_id: "Dibuat langsung oleh Ibu Halimah, perajin ahli yang menguasai teknik anyaman halus dengan kerapatan tinggi.",
+      process_en: "Micro-reed sorting -> Precision flattening -> Fine diagonal weaving -> Strap riveting and brass mounting -> Protective light shellac coating.",
+      process_id: "Penyortiran batang purun kecil -> Perataan presisi -> Penganyaman diagonal halus -> Pemasangan tali kulit dan kuningan -> Pelapisan tipis pelindung serat alami.",
+      care_en: "Handle strap with leather cleaner. Wipe the woven shell with a soft, clean dry cloth. Avoid crushing under heavy loads to maintain shape.",
+      care_id: "Bersihkan tali dengan pembersih kulit. Lap badan anyaman dengan kain lembut yang bersih dan kering. Hindari tertindih barang berat untuk menjaga bentuknya.",
+      impact_en: "Preserves the ancestral knowledge of fine diagonal weaving, which is fading among younger generations, by proving its viability in high-end markets.",
+      impact_id: "Melestarikan keahlian leluhur berupa teknik anyaman diagonal halus yang mulai memudar di kalangan generasi muda, dengan membuktikan nilainya di pasar premium."
+    }
+  },
+  {
+    id: "rawa-backpack",
+    category: "totes",
+    name: "Rawa Utility Backpack",
+    image: "assets/images/rawa_backpack.png",
+    price: "IDR 620,000 / $42.00",
+    description_en: "An everyday minimalist backpack woven from durable purun stalks, reinforced with a heavy cotton canvas lining and padded leather shoulder straps.",
+    description_id: "Ransel harian minimalis yang kokoh dari anyaman purun kering, diperkuat lapisan kain kanvas tebal dan tali bahu kulit berlapis busa empuk.",
+    details: {
+      material_en: "100% wild-harvested Purun grass (Lepironia articulata) tightly woven, lined with heavy cotton canvas, and reinforced with vegetable-tanned cowhide shoulder straps.",
+      material_id: "100% serat tanaman purun liar (Lepironia articulata) ditenun rapat, dilapisi kain kanvas tebal, dan diperkuat tali bahu kulit sapi samak nabati.",
+      origin_en: "Peatlands of Palam, Banjarbaru, South Kalimantan, Indonesia.",
+      origin_id: "Lahan basah Palam, Banjarbaru, Kalimantan Selatan, Indonesia.",
+      maker_en: "Handcrafted by Ibu Aminah and the Puan Cooperative, supporting sustainable livelihoods for peatland families.",
+      maker_id: "Dibuat manual oleh Ibu Aminah dan Koperasi Puan, mendukung penghidupan berkelanjutan bagi keluarga lahan basah.",
+      process_en: "Purun harvesting -> sun drying -> ironwood mallet flattening -> high-density weaving -> canvas inner lining sewing -> leather strap riveting.",
+      process_id: "Pemanenan purun -> penjemuran -> perataan alu ulin -> anyaman kerapatan tinggi -> penjahitan kain dalam kanvas -> pemasangan tali kulit.",
+      care_en: "Store in a dry room. Wipe clean with a soft dry cloth. If damp, air dry under indirect sunlight immediately.",
+      care_id: "Simpan di tempat kering. Bersihkan dengan kain lembut kering. Jika lembap, segera anginkan di bawah sinar matahari tidak langsung.",
+      impact_en: "Directly incentives peat forest protection over land draining. 100% fair trade income for local weavers.",
+      impact_id: "Mendorong pelestarian rawa gambut dari pembukaan lahan. 100% pendapatan perdagangan yang adil bagi penganyam lokal."
+    }
+  },
+  {
+    id: "sundance-hat",
+    category: "accessories",
+    name: "Sundance Wide-Brim Hat",
+    image: "assets/images/sundance_hat.png",
+    price: "IDR 240,000 / $16.00",
+    description_en: "A classic wide-brim sun hat hand-woven from flexible purun stalks. Lightweight, highly breathable, and providing elegant shade.",
+    description_id: "Topi pelindung matahari klasik bertepi lebar hasil anyaman purun yang lentur. Ringan, bersirkulasi udara baik, dan memberikan keteduhan elegan.",
+    details: {
+      material_en: "100% natural dried Purun grass stalks, hand-woven in an open-breathable weave pattern, secured with an adjustable leather chin strap.",
+      material_id: "100% serat tanaman purun kering alami, dianyam longgar yang bersirkulasi udara baik, dilengkapi tali dagu kulit yang dapat disesuaikan.",
+      origin_en: "Kampung Purun (Palam), South Kalimantan, Indonesia.",
+      origin_id: "Kampung Purun (Palam), Kalimantan Selatan, Indonesia.",
+      maker_en: "Woven by Ibu Hamidah, preserving traditional headwear weaving patterns of South Kalimantan.",
+      maker_id: "Dianyam oleh Ibu Hamidah, melestarikan pola anyaman penutup kepala tradisional Kalimantan Selatan.",
+      process_en: "Harvesting -> sun drying -> light stalk pounding -> flexible open weaving -> brim reinforcing -> leather strap integration.",
+      process_id: "Pemanenan -> penjemuran -> penumbukan ringan -> anyaman terbuka fleksibel -> penguatan pinggiran topi -> pemasangan tali kulit.",
+      care_en: "Avoid folding. Dust off with a soft brush. Keep away from water; if wet, reshape and dry in the shade.",
+      care_id: "Hindari melipat topi. Bersihkan debu dengan sikat halus. Jauhkan dari air; jika basah, atur ulang bentuknya dan jemur di tempat teduh.",
+      impact_en: "Preserves Kalimantan's traditional headwear craft techniques. Prevents deforestation by maintaining purun peat ecosystems.",
+      impact_id: "Melestarikan teknik anyaman penutup kepala tradisional Kalimantan. Mencegah deforestasi dengan menjaga ekosistem gambut purun."
+    }
+  }
+];
