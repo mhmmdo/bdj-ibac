@@ -1105,15 +1105,35 @@ const AIManager = {
         body: JSON.stringify({
           model: "mjl",
           messages: messagesToSend,
-          temperature: 0.7
+          temperature: 0.7,
+          stream: false
         })
       });
 
       if (!response.ok) {
-        throw new Error("API call failed");
+        const errBody = await response.text();
+        console.error("API Error Response (HTTP " + response.status + "):", errBody);
+        throw new Error("API call failed with status " + response.status);
       }
 
-      const data = await response.json();
+      // Read as text first to handle SSE/streaming format or extra characters
+      const rawText = await response.text();
+      console.log("Raw API response:", rawText.substring(0, 300));
+
+      let data;
+      try {
+        // First attempt: direct parse (works if response is clean JSON)
+        data = JSON.parse(rawText.trim());
+      } catch (parseErr) {
+        // Fallback: strip everything after the last closing brace
+        // This handles SSE suffix like "\n\ndata: [DONE]" after the JSON object
+        const lastBrace = rawText.lastIndexOf('}');
+        if (lastBrace !== -1) {
+          data = JSON.parse(rawText.substring(0, lastBrace + 1));
+        } else {
+          throw new Error("Cannot extract JSON from API response: " + rawText.substring(0, 200));
+        }
+      }
       const botResponse = data.choices[0].message.content;
       
       this.showTypingIndicator(false);

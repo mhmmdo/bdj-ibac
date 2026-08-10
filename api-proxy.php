@@ -34,11 +34,20 @@ if (!$input) {
 
 // Initialize cURL to forward request server-to-server (no CORS restriction here)
 $ch = curl_init('https://9router.simpelnya.web.id/v1/chat/completions');
+
+if (!$ch) {
+    ob_end_clean();
+    http_response_code(500);
+    echo json_encode(["error" => "cURL init failed"]);
+    exit;
+}
+
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $input);
 curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
     'Authorization: Bearer sk-5226ce097176b8fc-dq6n3t-b6af3a79'
@@ -55,7 +64,10 @@ ob_end_clean();
 
 if ($curlError) {
     http_response_code(500);
-    echo json_encode(["error" => "Proxy cURL Error: " . $curlError]);
+    echo json_encode(["error" => "cURL Error: " . $curlError]);
+} elseif ($httpCode === 0) {
+    http_response_code(502);
+    echo json_encode(["error" => "No response from upstream API (timeout or network)"]);
 } else {
     http_response_code($httpCode);
     echo $response;
