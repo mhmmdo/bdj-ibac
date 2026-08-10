@@ -57,7 +57,7 @@ function initMobileMenu() {
 function initScrollEffects() {
   // 1. Intersection Observer for elements reveal
   const revealElements = document.querySelectorAll(".reveal, .weave-reveal");
-  
+
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -110,7 +110,7 @@ function initScrollEffects() {
       // Calculate progress percentage when section passes viewport center
       const triggerStart = sectionRect.top - viewportHeight + 200;
       const triggerEnd = sectionRect.bottom - viewportHeight + 100;
-      
+
       let progress = 0;
       if (sectionRect.top < viewportHeight - 150) {
         const totalDist = sectionHeight - 200;
@@ -147,7 +147,7 @@ function initProductsGrid() {
   // Render function that adapts to active language
   const renderGrid = (lang) => {
     gridContainer.innerHTML = "";
-    
+
     // Filter products
     const filtered = products.filter(p => activeCategory === "all" || p.category === activeCategory);
 
@@ -235,7 +235,7 @@ function initPassportDrawer() {
     drawer.classList.remove("open");
     overlay.classList.remove("open");
     document.body.style.overflow = "";
-    
+
     // Restore focus to the trigger element that opened it
     const lastActive = drawer.getAttribute("data-trigger-id");
     if (lastActive) {
@@ -279,7 +279,7 @@ function initPassportDrawer() {
 function bindPassportTriggers() {
   const drawer = document.getElementById("passport-drawer");
   const overlay = document.getElementById("overlay");
-  
+
   document.querySelectorAll(".view-passport-btn").forEach((btn, idx) => {
     // Generate unique ID on buttons to trace active focus
     const btnId = `passport-trigger-${idx}`;
@@ -292,15 +292,15 @@ function bindPassportTriggers() {
 
       if (product) {
         populatePassport(product, LanguageManager.currentLang);
-        
+
         // Track the opening trigger
         drawer.setAttribute("data-trigger-id", btnId);
-        
+
         // Open drawer
         drawer.classList.add("open");
         overlay.classList.add("open");
         document.body.style.overflow = "hidden"; // lock page scroll
-        
+
         // Move focus inside drawer
         setTimeout(() => {
           drawer.querySelector(".passport-close-btn").focus();
@@ -515,7 +515,7 @@ const CartManager = {
     }
     this.save();
     this.updateBadge();
-    
+
     // Auto-open drawer when adding an item to show interactive feedback
     const toggleBtn = document.getElementById("cart-toggle-btn");
     if (toggleBtn) toggleBtn.click();
@@ -561,13 +561,13 @@ const CartManager = {
   renderDrawerList() {
     const listContainer = document.getElementById("cart-items-list");
     const subtotalContainer = document.getElementById("cart-subtotal-price");
-    
+
     if (!listContainer || !subtotalContainer) return;
 
     listContainer.innerHTML = "";
-    
+
     const lang = LanguageManager.currentLang;
-    
+
     if (this.items.length === 0) {
       listContainer.innerHTML = `
         <div style="text-align: center; color: var(--color-graphite); margin-top: 40px; font-family: var(--font-roboto);">
@@ -599,7 +599,7 @@ const CartManager = {
 
       const itemRow = document.createElement("div");
       itemRow.className = "cart-item-row";
-      
+
       const formattedItemPrice = lang === "en" ? `$${priceUSD.toFixed(2)} USD` : `IDR ${priceIDR.toLocaleString()}`;
 
       itemRow.innerHTML = `
@@ -921,7 +921,7 @@ function initWeaveSelector() {
     const data = textures[type];
     imgEl.classList.add("quiz-fade");
     imgEl.src = data.img;
-    
+
     // Trigger reflow
     void imgEl.offsetWidth;
     imgEl.classList.remove("quiz-fade");
@@ -988,7 +988,7 @@ const AIManager = {
     toggleBtn.addEventListener("click", () => {
       const isVisible = chatBox.style.display === "flex";
       chatBox.style.display = isVisible ? "none" : "flex";
-      
+
       if (!isVisible && !this.isInitialized) {
         this.loadWelcomeMessage();
         this.isInitialized = true;
@@ -1059,7 +1059,7 @@ const AIManager = {
     if (!inputField) return;
     const text = inputField.value.trim();
     if (!text) return;
-    
+
     inputField.value = "";
     this.sendMessage(text);
   },
@@ -1069,7 +1069,7 @@ const AIManager = {
     this.showTypingIndicator(true);
 
     const lang = LanguageManager.currentLang;
-    
+
     // Prepare thread
     this.chatHistory.push({ role: "user", content: userMessage });
 
@@ -1135,7 +1135,7 @@ const AIManager = {
         }
       }
       const botResponse = data.choices[0].message.content;
-      
+
       this.showTypingIndicator(false);
       this.addMessageToDOM("bot", botResponse);
       this.chatHistory.push({ role: "assistant", content: botResponse });
@@ -1208,7 +1208,7 @@ const AIManager = {
 
     const msgNode = document.createElement("div");
     msgNode.className = `ai-message ${sender}`;
-    
+
     // Parse formatting (bold markdown to HTML <strong>)
     let parsedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
