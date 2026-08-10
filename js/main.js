@@ -973,8 +973,7 @@ function initArtisanCards() {
    ========================================================================== */
 const AIManager = {
   chatHistory: [],
-  apiKey: "sk-5226ce097176b8fc-dq6n3t-b6af3a79",
-  apiRoute: "https://9router.simpelnya.web.id/v1/chat/completions",
+  apiRoute: "./api-proxy.php",
   isInitialized: false,
 
   init() {
@@ -1101,8 +1100,7 @@ const AIManager = {
       const response = await fetch(this.apiRoute, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${this.apiKey}`
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           model: "mjl",
