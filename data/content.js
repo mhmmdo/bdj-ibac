@@ -153,6 +153,14 @@ const content = {
       close: "Back to Store",
       impactSummary: "Your bag preserves <strong>{area} m²</strong> of peatland and offsets <strong>{carbon} kg</strong> of CO₂!"
     },
+    ai: {
+      inputPlaceholder: "Ask about style, carbon, or makers...",
+      welcome: "Hello! I am **Puan Eco-Assistant**. Ask me anything about our premium purun bags, environmental impact, or the weavers who craft them. How can I help you today?",
+      promptStyle: "Recommend a bag for travel",
+      promptCarbon: "Explain the carbon impact",
+      promptMakers: "Who makes these bags?",
+      promptContact: "Connect to WhatsApp"
+    },
     artisans: {
       eyebrow: "Meet the Makers",
       headline: "The Weaving Circle",
@@ -336,6 +344,14 @@ const content = {
       simulationNotice: "Terima kasih telah mendukung perajin lahan basah Kalimantan! Ini adalah simulasi kompetisi. Pada sistem aktif, ini akan terhubung ke gerbang pembayaran.",
       close: "Kembali ke Toko",
       impactSummary: "Keranjang Anda melestarikan <strong>{area} m²</strong> lahan gambut dan mencegah rilis <strong>{carbon} kg</strong> CO₂!"
+    },
+    ai: {
+      inputPlaceholder: "Tanyakan gaya, emisi karbon, perajin...",
+      welcome: "Halo! Saya **Puan Eco-Assistant**. Tanyakan apa saja tentang produk purun kami, dampak ekologis, atau perajin perempuan yang menganyamnya. Bagaimana saya bisa membantu Anda hari ini?",
+      promptStyle: "Rekomendasi tas untuk bepergian",
+      promptCarbon: "Jelaskan dampak lingkungan",
+      promptMakers: "Siapa saja perajinnya?",
+      promptContact: "Hubungi via WhatsApp"
     },
     artisans: {
       eyebrow: "Perajin Lahan Basah",

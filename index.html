@@ -247,8 +247,7 @@
             to inspect the raw textures and technical patterns.</p>
         </div>
 
-        <div class="reveal"
-          style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; flex-wrap: wrap;">
+        <div class="reveal weave-showcase-grid">
           <!-- Left side: Selectors -->
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <button class="quiz-option-btn active-selector" id="weave-btn-raw"
@@ -785,15 +784,50 @@
     </div>
   </aside>
 
-  <!-- FLOATING WHATSAPP CRO WIDGET -->
-  <a href="https://api.whatsapp.com/send/?phone=6282159619636&text=Halo%20Purun%20Puan,%20saya%20ingin%20tanya%20detail%20mengenai%20produk%20anyaman%20Anda.&type=phone_number&app_absent=0"
-    class="whatsapp-float-widget" target="_blank" rel="noopener" aria-label="Chat with Purun Puan on WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.62.963 3.41 1.47 5.238 1.472 5.549 0 10.065-4.512 10.068-10.066.002-2.69-1.042-5.221-2.94-7.122C17.11 1.536 14.584.49 11.895.49c-5.558 0-10.078 4.516-10.082 10.072 0 1.83.479 3.619 1.39 5.221l-.992 3.623 3.71-.973c1.547.844 3.287 1.289 5.036 1.29zm8.563-7.06c-.347-.174-2.054-1.014-2.372-1.13-.318-.116-.549-.174-.78.174-.23.348-.895 1.13-1.096 1.362-.201.232-.403.261-.75.087-.348-.174-1.47-.542-2.798-1.728-1.034-.922-1.733-2.062-1.936-2.41-.202-.348-.022-.536.153-.71.156-.156.348-.406.522-.609.174-.203.232-.348.348-.58.116-.232.058-.435-.029-.609-.087-.174-.78-1.884-1.069-2.58-.282-.676-.567-.585-.78-.596-.201-.01-.432-.012-.663-.012-.23 0-.606.087-.923.435-.318.348-1.214 1.189-1.214 2.901 0 1.711 1.244 3.364 1.417 3.596.173.232 2.449 3.738 5.932 5.24.828.357 1.474.57 1.977.73.832.264 1.59.227 2.189.138.667-.099 2.054-.839 2.343-1.651.289-.812.289-1.507.202-1.651-.087-.144-.318-.232-.665-.406z" />
-    </svg>
-    <span class="whatsapp-tooltip">Chat with us!</span>
-  </a>
+  <!-- AI ECO-ASSISTANT CHAT WIDGET -->
+  <div class="ai-chat-widget-container">
+    <!-- Chat Window Box -->
+    <div class="ai-chat-box" id="ai-chat-box" style="display: none; flex-direction: column;">
+      <div class="ai-chat-header">
+        <div class="ai-chat-title">
+          <span class="ai-chat-status-dot"></span>
+          <span>Puan Eco-Assistant</span>
+        </div>
+        <button class="ai-chat-close-btn" id="ai-close-btn" aria-label="Close Chat">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div class="ai-chat-messages" id="ai-messages-list">
+        <!-- Messages loaded dynamically -->
+      </div>
+
+      <!-- Quick prompts/chips -->
+      <div class="ai-chat-prompts" id="ai-chips-list">
+        <!-- chips dynamically loaded -->
+      </div>
+
+      <!-- Input Send Bar -->
+      <div class="ai-chat-input-bar">
+        <input type="text" class="ai-chat-input" id="ai-chat-input-field" placeholder="Ask about style, carbon, or makers..." data-t-placeholder="ai.inputPlaceholder">
+        <button class="ai-chat-send-btn" id="ai-send-btn" aria-label="Send Message">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Chat Trigger Button -->
+    <button class="ai-chat-bubble" id="ai-toggle-btn" aria-label="Open AI Assistant" title="Chat with Puan AI">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+      </svg>
+    </button>
+  </div>
 
   <!-- CONTENT DATA & SCRIPTS -->
   <script src="data/content.js"></script>

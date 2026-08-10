@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize premium extensions
   initWeaveSelector();
   initArtisanCards();
+
+  // Initialize AI Eco-Assistant Chat
+  AIManager.init();
 });
 
 /* ==========================================================================
@@ -964,3 +967,271 @@ function initArtisanCards() {
     });
   });
 }
+
+/* ==========================================================================
+   AI ECO-ASSISTANT CHAT ENGINE
+   ========================================================================== */
+const AIManager = {
+  chatHistory: [],
+  apiKey: "sk-5226ce097176b8fc-dq6n3t-b6af3a79",
+  apiRoute: "https://9router.simpelnya.web.id/v1/chat/completions",
+  isInitialized: false,
+
+  init() {
+    const toggleBtn = document.getElementById("ai-toggle-btn");
+    const closeBtn = document.getElementById("ai-close-btn");
+    const sendBtn = document.getElementById("ai-send-btn");
+    const chatBox = document.getElementById("ai-chat-box");
+    const inputField = document.getElementById("ai-chat-input-field");
+
+    if (!toggleBtn || !chatBox || !closeBtn || !sendBtn || !inputField) return;
+
+    toggleBtn.addEventListener("click", () => {
+      const isVisible = chatBox.style.display === "flex";
+      chatBox.style.display = isVisible ? "none" : "flex";
+      
+      if (!isVisible && !this.isInitialized) {
+        this.loadWelcomeMessage();
+        this.isInitialized = true;
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      chatBox.style.display = "none";
+    });
+
+    sendBtn.addEventListener("click", () => this.handleSendMessage());
+    inputField.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        this.handleSendMessage();
+      }
+    });
+
+    // Re-render chips and welcome on language change
+    LanguageManager.registerListener(() => {
+      if (this.isInitialized) {
+        this.renderChips();
+      }
+    });
+  },
+
+  loadWelcomeMessage() {
+    const listEl = document.getElementById("ai-messages-list");
+    if (!listEl) return;
+    listEl.innerHTML = "";
+
+    const lang = LanguageManager.currentLang;
+    const welcomeText = content[lang].ai.welcome;
+
+    this.addMessageToDOM("bot", welcomeText);
+    this.renderChips();
+  },
+
+  renderChips() {
+    const chipsEl = document.getElementById("ai-chips-list");
+    if (!chipsEl) return;
+    chipsEl.innerHTML = "";
+
+    const lang = LanguageManager.currentLang;
+    const prompts = [
+      { text: content[lang].ai.promptStyle, query: lang === "en" ? "Recommend a bag for travel" : "Rekomendasi tas untuk bepergian" },
+      { text: content[lang].ai.promptCarbon, query: lang === "en" ? "Explain carbon impact of bags" : "Jelaskan dampak lingkungan dari tas" },
+      { text: content[lang].ai.promptMakers, query: lang === "en" ? "Who are the weavers?" : "Siapa saja perajinnya?" },
+      { text: content[lang].ai.promptContact, query: "WhatsApp" }
+    ];
+
+    prompts.forEach(p => {
+      const chip = document.createElement("button");
+      chip.className = "ai-prompt-chip";
+      chip.textContent = p.text;
+      chip.addEventListener("click", () => {
+        if (p.query === "WhatsApp") {
+          window.open("https://api.whatsapp.com/send/?phone=6282159619636&text=Halo%20Purun%20Puan,%20saya%20tertarik%20untuk%20berkonsultasi.&type=phone_number&app_absent=0", "_blank", "noopener");
+        } else {
+          this.sendMessage(p.query);
+        }
+      });
+      chipsEl.appendChild(chip);
+    });
+  },
+
+  async handleSendMessage() {
+    const inputField = document.getElementById("ai-chat-input-field");
+    if (!inputField) return;
+    const text = inputField.value.trim();
+    if (!text) return;
+    
+    inputField.value = "";
+    this.sendMessage(text);
+  },
+
+  async sendMessage(userMessage) {
+    this.addMessageToDOM("user", userMessage);
+    this.showTypingIndicator(true);
+
+    const lang = LanguageManager.currentLang;
+    
+    // Prepare thread
+    this.chatHistory.push({ role: "user", content: userMessage });
+
+    const systemPrompt = `You are Puan Eco-Assistant, the official AI Brand Storyteller and Eco-Curator for Purun Puan. 
+    Purun Puan is a premium sustainable fashion brand from South Kalimantan, Indonesia, using wild purun grass to weave contemporary bags and protect wet peatland swamps.
+    Artisans are rural women ('Puan') organized into circles, led by Ibu Salamah (Palam Circle Leader), Ibu Hamdanah (Sasirangan Specialist), and Ibu Halimah (Fine diagonal expert).
+    Our catalog:
+    - savara-bag (Savara Woven Tote, IDR 580,000 / $39.00)
+    - sasirangan-clutch (Sasirangan Weave Clutch, IDR 350,000 / $24.00)
+    - palam-tote (Palam Classic Tote, IDR 420,000 / $29.00)
+    - kencana-purse (Kencana Shell Purse, IDR 280,000 / $19.00)
+    - rawa-backpack (Rawa Utility Backpack, IDR 680,000 / $46.00)
+    - sundance-hat (Sundance Wide-Brim Hat, IDR 220,000 / $15.00)
+    
+    Rules:
+    1. Always respond in the active language of the user: ${lang === 'id' ? 'Indonesian' : 'English'}.
+    2. Keep responses brief, storytelling-focused, and highly professional (maximum 2 short paragraphs).
+    3. When recommending a product, output the exact product ID enclosed in double square brackets like [[savara-bag]], [[sasirangan-clutch]], [[palam-tote]], [[kencana-purse]], [[rawa-backpack]], [[sundance-hat]] so the app can render the card inline. Avoid using brackets for other terms.
+    4. Do not make up facts. Focus on conservation and empowering local women weavers.
+    5. STRICT SCOPE CONSTRAINT: You must ONLY answer questions directly related to Purun Puan, our products, our weavers, Kalimantan peatlands, and eco-sustainability. If the user asks about anything else (e.g. general knowledge, math, programming, cooking, other brands), you must politely decline to answer and redirect them back to Purun Puan's heritage and products. Keep it friendly but firm.`;
+
+    const messagesToSend = [
+      { role: "system", content: systemPrompt },
+      ...this.chatHistory
+    ];
+
+    try {
+      const response = await fetch(this.apiRoute, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${this.apiKey}`
+        },
+        body: JSON.stringify({
+          model: "mjl",
+          messages: messagesToSend,
+          temperature: 0.7
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("API call failed");
+      }
+
+      const data = await response.json();
+      const botResponse = data.choices[0].message.content;
+      
+      this.showTypingIndicator(false);
+      this.addMessageToDOM("bot", botResponse);
+      this.chatHistory.push({ role: "assistant", content: botResponse });
+
+    } catch (e) {
+      console.warn("AI API Error, falling back to local NLP matcher:", e);
+      // Run local NLP matcher fallback
+      setTimeout(() => {
+        this.showTypingIndicator(false);
+        const fallbackText = this.getLocalFallback(userMessage);
+        this.addMessageToDOM("bot", fallbackText);
+        this.chatHistory.push({ role: "assistant", content: fallbackText });
+      }, 1000);
+    }
+  },
+
+  getLocalFallback(msg) {
+    const text = msg.toLowerCase();
+    const lang = LanguageManager.currentLang;
+
+    if (lang === "en") {
+      if (text.includes("style") || text.includes("recommend") || text.includes("bag") || text.includes("travel")) {
+        return "For active travel and daily utility, I recommend the **Rawa Utility Backpack** [[rawa-backpack]]. If you are looking for formal elegance, the **Sasirangan Weave Clutch** [[sasirangan-clutch]] featuring hand-dyed lining is perfect!";
+      }
+      if (text.includes("carbon") || text.includes("peatland") || text.includes("eco") || text.includes("impact")) {
+        return "Every Purun Puan bag bought helps protect Kalimantan's peatlands. Healthy peatlands store 10x more carbon than forests. By keeping them wet, we prevent carbon emissions! On average, one bag preserves 1.5 m² of peatland and offsets 0.8 kg of CO₂.";
+      }
+      if (text.includes("maker") || text.includes("artisan") || text.includes("weav") || text.includes("who")) {
+        return "Our bags are hand-woven by the Puan (women weavers) of South Kalimantan, led by Ibu Salamah, Ibu Hamdanah, and Ibu Halimah. They earn fair wages and keep their cultural weaving legacy alive.";
+      }
+      return "I can assist you with product recommendations, carbon conservation data, or artisan profiles. Try asking: 'Which bag is best for travel?' or 'Tell me about the makers'.";
+    } else {
+      if (text.includes("gaya") || text.includes("rekomendasi") || text.includes("tas") || text.includes("bepergian") || text.includes("travel")) {
+        return "Untuk perjalanan aktif dan kebutuhan harian, saya merekomendasikan **Rawa Utility Backpack** [[rawa-backpack]]. Jika Anda mencari keanggunan formal, **Sasirangan Weave Clutch** [[sasirangan-clutch]] dengan lapisan Sasirangan buatan tangan sangat cocok!";
+      }
+      if (text.includes("karbon") || text.includes("gambut") || text.includes("lingkungan") || text.includes("dampak")) {
+        return "Setiap tas Purun Puan yang dibeli membantu melindungi lahan gambut Kalimantan. Lahan gambut sehat menyimpan 10x lebih banyak karbon dibanding hutan biasa. Rata-rata satu tas melestarikan 1.5 m² lahan gambut dan mencegah pelepasan 0.8 kg CO₂.";
+      }
+      if (text.includes("perajin") || text.includes("pembuat") || text.includes("anyam") || text.includes("siapa")) {
+        return "Tas kami dianyam langsung oleh para perajin perempuan (*Puan*) di Kalimantan Selatan, yang dipimpin oleh Ibu Salamah, Ibu Hamdanah, dan Ibu Halimah. Mereka menerima upah adil dan melestarikan warisan leluhur.";
+      }
+      return "Saya dapat membantu Anda memberikan rekomendasi produk, data pelestarian karbon, atau cerita perajin. Cobalah bertanya: 'Tas apa yang cocok untuk bepergian?' atau 'Ceritakan tentang perajin'.";
+    }
+  },
+
+  showTypingIndicator(show) {
+    const listEl = document.getElementById("ai-messages-list");
+    if (!listEl) return;
+
+    const existing = document.getElementById("ai-typing-indicator-node");
+    if (existing) existing.remove();
+
+    if (show) {
+      const indicator = document.createElement("div");
+      indicator.className = "typing-indicator";
+      indicator.id = "ai-typing-indicator-node";
+      indicator.innerHTML = `
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      `;
+      listEl.appendChild(indicator);
+      listEl.scrollTop = listEl.scrollHeight;
+    }
+  },
+
+  addMessageToDOM(sender, text) {
+    const listEl = document.getElementById("ai-messages-list");
+    if (!listEl) return;
+
+    const msgNode = document.createElement("div");
+    msgNode.className = `ai-message ${sender}`;
+    
+    // Parse formatting (bold markdown to HTML <strong>)
+    let parsedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Parse [[product-id]] inline recommendations
+    const productRegex = /\[\[([a-zA-Z0-9\-]+)\]\]/g;
+    let match;
+    let productsToRender = [];
+
+    while ((match = productRegex.exec(parsedText)) !== null) {
+      const prodId = match[1];
+      const product = products.find(p => p.id === prodId);
+      if (product) {
+        productsToRender.push(product);
+      }
+    }
+
+    // Strip brackets out of the text
+    parsedText = parsedText.replace(productRegex, "");
+
+    // Set message text
+    msgNode.innerHTML = parsedText;
+
+    // Render inline product cards if found
+    productsToRender.forEach(p => {
+      const lang = LanguageManager.currentLang;
+      const card = document.createElement("div");
+      card.className = "ai-product-card-inline";
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+        <div style="flex: 1;">
+          <h5>${p.name}</h5>
+          <span>${p.price}</span>
+          <button class="btn btn-primary" style="padding: 6px 12px; font-size: 11px;" onclick="window.CartManager.addItem('${p.id}')">
+            ${lang === "en" ? "Add to Bag" : "Masukkan Keranjang"}
+          </button>
+        </div>
+      `;
+      msgNode.appendChild(card);
+    });
+
+    listEl.appendChild(msgNode);
+    listEl.scrollTop = listEl.scrollHeight;
+  }
+};

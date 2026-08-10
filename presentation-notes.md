@@ -69,18 +69,18 @@
 
 ---
 
-## 06:15 - 07:30 | B2C Shopping Cart, WhatsApp Checkout, & Floating Widget
-*   **Visual Focus:** Restored Shopping Bag drawer with live subtotal adjustments, and Floating WhatsApp widget
-*   **Presenter Pitch (Frictionless Checkout & High-Trust Commerce):**
-    > "Let us look at the purchase transaction flow. Setting up complex international credit card merchant gateways can be a major technical and financial barrier for emerging local brands.
+## 06:15 - 07:30 | B2C Checkout, Chat Commerce & Live AI Eco-Assistant
+*   **Visual Focus:** Floating AI Widget bubble, Open Chatbox, Inline Recommended Product Cards, and Shopping Bag Drawer
+*   **Presenter Pitch (Frictionless Conversational CRO & AI Integration):**
+    > "To stand out from generic chatbot help desks, we integrated a **Live AI Eco-Assistant** at the bottom-right corner, connected directly to a live GPT-4o-mini completions endpoint.
     > 
-    > Our system uses a hybrid model: the **WhatsApp Checkout Bridge**. The user manages their items in a modern, standard shopping cart drawer that calculates subtotals dynamically. 
+    > Our AI acts as a digital curator. Visitors can ask custom questions about styling or sustainability. For example, if a user asks: 'Recommend a bag for travel', the AI doesn't just reply with text; it dynamically renders an **interactive product card** directly inside the chat window.
     > 
-    > But when they click 'Proceed to Checkout', we redirect them to WhatsApp with a pre-formatted, bilingual invoice listing all items, quantities, and prices.
+    > Clicking the card's 'Add to Bag' button instantly adds the item to our dynamic Shopping Bag drawer.
     > 
-    > We also integrated a **Floating WhatsApp Widget** at the bottom-right corner, prompting instant customer support to capture leads before they bounce.
+    > This creates a seamless, conversational checkout journey. If the user wants to finalize payment, the assistant offers a direct link to transition the context directly to WhatsApp.
     > 
-    > This bridges B2C cart convenience with conversational checkout behavior. It resolves shipping calculation friction (since shipping rates for hand-woven items are highly variable) and allows the business to offer high-trust, personalized payment links, ensuring a much higher final transaction completion rate."
+    > To ensure our presentation is 100% stable, we built a **local NLP keyword matcher fallback**. If the internet is down, the assistant still answers perfectly. This is a robust, premium digital commerce solution."
 
 ---
 
