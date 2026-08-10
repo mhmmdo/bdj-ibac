@@ -180,7 +180,7 @@ const content = {
       branding: "PURUN PUAN",
       tagline: "Woven in South Kalimantan. Made for the world.",
       rights: "© 2026 Purun Puan. All rights reserved.",
-      strategyNote: "IBAC 2026 — Business Website Design. Created for Local to Global UMKM Digitalization."
+      strategyNote: "Created for Local to Global UMKM Digitalization."
     }
   },
   id: {
@@ -364,7 +364,7 @@ const content = {
       branding: "PURUN PUAN",
       tagline: "Dianyam di Kalimantan Selatan. Dihadirkan untuk dunia.",
       rights: "© 2026 Purun Puan. Hak cipta dilindungi undang-undang.",
-      strategyNote: "IBAC 2026 — Desain Website Bisnis. Dibuat untuk Digitalisasi UMKM Unggulan Daerah."
+      strategyNote: "Dibuat untuk Digitalisasi UMKM Unggulan Daerah."
     }
   }
 };
